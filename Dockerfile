@@ -18,6 +18,11 @@ RUN npm run build
 
 # ====== SERVIR FRONTEND ======
 FROM nginx:alpine AS production
+# Usamos la variable de entorno PORT que Railway asigna automáticamente
+ARG PORT=3000
+ENV PORT=${PORT}
 COPY --from=frontend /app/frontend/dist /usr/share/nginx/html
-EXPOSE 80
+# Configuramos Nginx para usar el puerto dinámico
+RUN sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/conf.d/default.conf
+EXPOSE ${PORT}
 CMD ["nginx", "-g", "daemon off;"]
