@@ -1,0 +1,31 @@
+COMANDOS NECESARIOS EN NODEJS
+
+npm init -y     -----  Ayuda a inicializar tu package.json por defecto (Si no usas el "-y" te ira pidiendo datos).
+npm install     ----- Ayuda a instalar una dependencia ya sea de desarrollador o de producccion.
+npm run         ----- Se utiliza para "correr" un script (En este caso se utilizo para correr el script "dev").
+
+COMANDOS NECESARIOS EN DOCKER
+
+<nombre del archivo yml> up -d 
+docker-compose up -d              Esto levanta todos los servicios que esten en el contenedor.
+docker-compose ps                 Se ven todos los servicios que estan levantados.
+docker-compose down               Finaliza o cierra todos los servicios que esten activos.
+docker exec -i tasks_db psql -U jadith -d tasks < src/db/init.sql            Esto sirve para ejecutar consultas mediante el contenedor.
+
+
+DEPENDENCIAS UTILIZADAS
+
+    Produccion:
+        - Dotenv.
+        - Express.
+        - pg.
+    
+    Desarrollador:
+        - Nodemon.
+        - Standard.
+
+
+PACKAGE.json
+
+El objeto de scripts es basicamente un menu de comandos personalizados que puedes ejecutar con npm run.
+En mi caso tengo "start" y "dev".
