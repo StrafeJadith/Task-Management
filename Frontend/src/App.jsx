@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 // Routes -> Contenedor de todas las rutas definidas
 // Route -> Define cada ruta con su path y componente
 // Navigate -> Permite redirigir a otra ruta (ej: si no hay sesión, enviar a /login)
-import LoginPage from './pages/loginPage'
+import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import TaskPage from './pages/TaskPage'
 import './App.css'
