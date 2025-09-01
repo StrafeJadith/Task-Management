@@ -1,6 +1,6 @@
 FROM node:20
 WORKDIR /app
-COPY package*.json ./
+COPY Backend/package*.json ./
 RUN npm install --production
 COPY . .
 EXPOSE 3000
