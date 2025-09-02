@@ -11,9 +11,6 @@ export const pool = new Pool({
   // password: process.env.DB_PASSWORD,
   // database: process.env.DB_NAME,
   // port: process.env.DB_PORT
-  host: process.env.PGHOST,
-  port: process.env.PGPORT,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  database: process.env.PGDATABASE
+  connectionString: process.env.DATABASE_PUBLIC_URL, // o DATABASE_PUBLIC_URL
+  ssl: { rejectUnauthorized: false } // necesario en Railway
 })
