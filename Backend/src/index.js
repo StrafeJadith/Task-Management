@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url' // Se importa fileURLToPath.
 import authRouter from './routes/auth.routes.js'
 import cors from 'cors'
 
-const PORT = process.env.PORT || 3000
 const __filename = fileURLToPath(import.meta.url) // Convierte una URL de archivo en una ruta de archivo normal del sistema. (aqui obtengo la ruta completa del archivo actual)
 const __dirname = path.dirname(__filename) // Se utiliza para obtener la carpeta actual del archivo que se le pasa en los parametros. (aqui obtengo la carpeta antes de llegar archivo actual).
 
@@ -24,5 +23,5 @@ app.use('/auth', authRouter)
 app.use('/', router) // conecta el router a la aplicación, permitiendo organizar rutas en archivos separados y mantener tu código limpio.
 
 app.listen(process.env.PORT, (req, res) => { // app.listen se utiliza para arrancar el servidor, mientras que procces.env.PORT contiene el puerto en el que el servidor estara funcionando.
-  console.log(`El servidor esta escuchando en el puerto ${PORT}`)
+  console.log(`El servidor esta escuchando en el puerto: http://localhost:${process.env.PORT}`)
 })
